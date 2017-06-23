@@ -1,10 +1,11 @@
-
 const express = require('express')
 const exphbs = require('express-handlebars')
 const Handlebars = require('handlebars')
 const bodyParser = require('body-parser')
 const configRoutes = require('./routes')
 const path = require('path')
+
+const scholar = require('google-scholar')
 
 const app = express()
 const expressStatic = express.static(path.join(__dirname, '/public'))
