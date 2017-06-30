@@ -12,7 +12,8 @@ let exportedMethods = {
     .then (resultsq1 => {
       return scholar.search(queryTwo)
       .then (resultsq2 => {
-        return [resultsq1.count, resultsq2.count]
+        let winner = resultsq1.count > resultsq2.count ? queryOne : queryTwo 
+        return [winner]
       })  
     })
   }

@@ -3,10 +3,13 @@ const router = express.Router()
 const page = require('../data/page')
 
 router.get('/', (req, res) => {
-  page.getBoth('meat', 'vegetables').then((_data) => {
+  res.render('page')
+})
+
+router.post('/', (req, res) => {
+  page.getBoth(req.body.first, req.body.second).then((_data) => {
     res.render('page', {
-      count1: _data[0],
-      count2: _data[1]
+      result: _data
     })
   })
 })
